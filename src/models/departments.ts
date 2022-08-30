@@ -5,12 +5,16 @@ import { Table, Column, Model, HasMany, DataType } from 'sequelize-typescript'
     timestamps: true,
     tableName:"depatments"
   })
+
+
 export class Departments extends Model {
   @Column({
-    type: DataType.STRING,
-    allowNull: false
+    type: DataType.BIGINT,
+    allowNull: false,
+    autoIncrement:true,
+    primaryKey: true
   })
-  name!: string;
+  id!: Number;
 
  @Column({
     type: DataType.STRING,

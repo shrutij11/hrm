@@ -1,5 +1,6 @@
-import { Table, Column, Model, HasMany, DataType } from 'sequelize-typescript'
+import { Table, Column, Model, HasMany, DataType, Length } from 'sequelize-typescript'
 // import { DataType } from 'sequelize/types'
+const { sequelizeJoi, Joi } = require("sequelize-joi");
 
 @Table({
     timestamps: true,
@@ -16,9 +17,13 @@ export class Departments extends Model {
   })
   id!: Number;
 
+
+@Length({ min: 3 })
  @Column({
     type: DataType.STRING,
-    allowNull: false
+    allowNull: false,
+    
+   
   })
   department_name!: string;
 
